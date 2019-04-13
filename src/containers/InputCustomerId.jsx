@@ -4,7 +4,7 @@ import { setCityName } from '../actions';
 
 const styles = {
   display: 'block',
-  width: '80%',
+  width: '30%',
   margin: '10%',
   fontSize: '30px',
   borderRadius: '4em',
@@ -14,7 +14,7 @@ const styles = {
 
 const SearchField = ({ setCityName }) => (
   <div>
-    <input style={styles} onChange={(evt) => { setCityName(evt.target.value); }} type="text" placeholder="Enter city name or get temp in London" />
+    <input style={styles} onChange={(evt) => { setCityName(evt.target.value); }} type="text" placeholder="Enter UserName" />
   </div>
 );
 
@@ -26,6 +26,5 @@ const Search = connect(
   null,
   mapDispatchToProps,
 )(SearchField);
-
 
 export default Search;

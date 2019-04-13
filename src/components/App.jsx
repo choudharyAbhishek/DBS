@@ -2,15 +2,18 @@ import React from 'react';
 import Button from '../containers/Button';
 import Temperature from '../containers/Temperature'
 import Loading from '../containers/Loading';
-import InputCity from  '../containers/InputCity';
+import InputCustomerId from  '../containers/InputCustomerId';
+import InputPassword from  '../containers/InputPassword';
+import DbsLogo from '../containers/Logo'
 import {connect } from 'react-redux'
-
 
 let App = ({ callDone, id,getByUrl }) => {
   if(id && !callDone){getByUrl(id)}
   return (
     <div>
-      <InputCity/>
+      <DbsLogo/>
+      <InputCustomerId/>
+      <InputPassword/>
       <Button />
       <Loading />
       <Temperature name={id} />
@@ -23,7 +26,6 @@ const mapStateToProps = (state, ownProps) => ({
   callDone: state.reducer.callDone,
 });
 
-
 const mapDispatchToProps = dispatch => ({
   getByUrl: (name) => { dispatch({type:'GET_TEMP',name}); },
 });
@@ -32,7 +34,5 @@ App = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(App);
-
-
 
 export default App;

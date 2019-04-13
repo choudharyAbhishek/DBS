@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { getTemp } from '../actions'
 
 let styles = {
-  backgroundColor: 'HotPink ',
-  width: '250px',
-  height: '100px',
-  borderRadius: '100px',
+  backgroundColor: 'red ',
+  width: '150px',
+  height: '50px',
+  borderRadius: '40px',
   display: 'block',
   margin: '50px auto',
   fontSize: '25px',
@@ -24,7 +24,7 @@ class Button extends React.Component {
         onMouseOut={() => { this.setState({ hover: false }) }}
         onMouseOver={() => { this.setState({ hover: true }) }}
         onClick={() => this.props.getTemp(this.props.name)}
-      >Get temperature</button>
+      >Login</button>
     );
   }
 
@@ -40,7 +40,6 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = {
   getTemp,
 };
-
 
 Button = connect(
   mapStateToProps,
